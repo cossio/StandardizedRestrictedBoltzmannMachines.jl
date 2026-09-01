@@ -34,3 +34,9 @@ updates:
       all-julia-packages:
         patterns:
           - "*"
+    # RestrictedBoltzmannMachines is pinned to the 3.x series by design: this
+    # package does not support later releases, so never propose a major bump.
+    # Minor/patch bumps within 3.x are still allowed.
+    ignore:
+      - dependency-name: "RestrictedBoltzmannMachines"
+        update-types: ["version-update:semver-major"]
